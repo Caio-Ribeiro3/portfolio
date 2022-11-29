@@ -21,7 +21,10 @@ export default function Home(props: HomeProps) {
 
   return (
     <>
-      <section className='flex py-16 justify-center  gap-8' style={{ height: `calc(100vh - ${headerHeight || 0}px)`, scrollSnapAlign: 'end' }}>
+      <section
+        className='flex py-16 justify-center  gap-8'
+        style={{ height: `calc(100vh - ${headerHeight || 0}px)`, scrollSnapAlign: 'end' }}
+      >
         <div className='lg:w-[50%] my-auto text-center'>
           <h1 className="text-5xl font-bold">
             👋 Hi, my name is Caio, a frontend developer

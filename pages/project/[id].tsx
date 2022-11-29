@@ -24,9 +24,12 @@ const Project = (props: ProjectProps) => {
         <meta name="description" content={project.description} />
       </Head>
 
-      <section className="grid grid-cols-2 gap-8 py-16" style={{ height: `calc(100vh - ${headerHeight || 0}px)` }}>
-        <div className="flex flex-col gap-8">
-          <div className='relative h-[62%] w-auto' style={{ height: `calc(100% - calc(100px + 4rem))` }}>
+      <section
+        className="grid grid-cols-1 lg:grid-cols-2 gap-8 py-16"
+        style={{ minHeight: `calc(100vh - ${headerHeight || 0}px)` }}
+      >
+        <div className="flex flex-col gap-8 min-h-[50vh] md:h-auto">
+          <div className={`relative ${project.images.length > 1 ? 'h-[33vh]' : 'h-full'} lg:h-[calc(100%-calc(100px+4rem))] w-auto`}>
             <Image
               src={currentImage}
               alt=''
@@ -35,32 +38,34 @@ const Project = (props: ProjectProps) => {
               className='rounded-lg'
             />
           </div>
-          <div className="grid grid-cols-4 gap-4">
-            {project.images.reduce<string[]>((acc, curr) => {
-              if (curr !== currentImage) {
-                acc.push(curr)
-              }
-              return acc
-            }, []).map((src) => (
-              <div
-                key={src}
-                className='relative h-[100px] w-full cursor-pointer'
-                onClick={() => {
-                  setCurrentImage(src)
-                }}
-              >
-                <Image
-                  src={src}
-                  alt=''
-                  layout='fill'
-                  objectFit='cover'
-                  className='rounded-lg'
-                />
-              </div>
-            ))}
+          <div className="overflow-x-auto pr-4 md:pr-0">
+            <div className="grid grid-cols-4 gap-4 w-[200%] md:w-auto">
+              {project.images.reduce<string[]>((acc, curr) => {
+                if (curr !== currentImage) {
+                  acc.push(curr)
+                }
+                return acc
+              }, []).map((src) => (
+                <div
+                  key={src}
+                  className='relative h-[100px] w-full cursor-pointer'
+                  onClick={() => {
+                    setCurrentImage(src)
+                  }}
+                >
+                  <Image
+                    src={src}
+                    alt=''
+                    layout='fill'
+                    objectFit='cover'
+                    className='rounded-lg'
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-        <div className="flex flex-col gap-8 items-start">
+        <div className="flex flex-col gap-8 items-center text-center lg:text-left lg:items-start">
           <h1 className="text-5xl font-bold">
             {project.name}
           </h1>
@@ -86,7 +91,13 @@ const Project = (props: ProjectProps) => {
               )
             })}
           </div>
-          <a target='_blank' rel="noreferrer" href={project.link} type="button" className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-8 py-3 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
+          <a
+            target='_blank'
+            rel="noreferrer"
+            href={project.link}
+            type="button"
+            className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-8 py-3 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+          >
             Visit the Project
           </a>
         </div>
