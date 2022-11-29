@@ -30,7 +30,7 @@ export default function Home(props: HomeProps) {
             👋 Hi, my name is Caio, a frontend developer
           </h1>
           <p className='my-8'>
-            Fascinated by technology, i studied Systems Development at SENAI CETIND, although a full-stack developer, lately i've been more focused on the frontend and mobile development using React.Js and React-Native.
+            Fascinated by technology, i studied Systems Development at SENAI CETIND, although a full-stack developer, lately i&apos;ve been more focused on the frontend and mobile development using React.Js and React-Native.
             <br />
             I love challenges that involve both creativity and logic, always trying to find the best solution to a problem. Because of this a lot of the fun in the field for me come from hackathons at my free time.
           </p>
