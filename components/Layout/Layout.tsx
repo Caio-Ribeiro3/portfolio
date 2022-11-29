@@ -1,13 +1,13 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { cloneElement, ReactNode, useRef } from 'react';
+import { cloneElement, JSXElementConstructor, ReactElement, useRef } from 'react';
 
-import { AiFillHtml5, AiOutlineGithub, AiTwotoneMail, AiFillLinkedin } from "react-icons/ai";
+import { AiOutlineGithub, AiTwotoneMail, AiFillLinkedin } from "react-icons/ai";
 
 import Container from "../Container/Container"
 
 interface LayoutProps {
-    children: ReactNode;
+    children: ReactElement<any, string | JSXElementConstructor<any>>;
 }
 
 const Layout = (props: LayoutProps) => {
