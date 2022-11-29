@@ -18,7 +18,7 @@ const Layout = (props: LayoutProps) => {
     return (
         <div className='text-gray-800'>
             <Head>
-                <title>Caio's portfolio</title>
+                <title>Caio&apos;s portfolio</title>
                 <meta name="description" content="Welcome to my portfolio page, here you can find some of my projetcs" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
@@ -30,10 +30,10 @@ const Layout = (props: LayoutProps) => {
                             Caio Ribeiro
                         </Link>
                         <div className='flex gap-8'>
-                            <a target='_blank' href='https://www.linkedin.com/in/caio-ribeiro-465509185/'>
+                            <a target='_blank' rel="noreferrer" href='https://www.linkedin.com/in/caio-ribeiro-465509185/'>
                                 <AiFillLinkedin size={24} />
                             </a>
-                            <a target='_blank' href='https://github.com/Caio-Ribeiro3'>
+                            <a target='_blank' rel="noreferrer" href='https://github.com/Caio-Ribeiro3'>
                                 <AiOutlineGithub size={24} />
                             </a>
                             <a href="mailto:devcaioribeiro@gmail.com" >
